@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>CokeCanGen_WPF</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  
+   <PropertyGroup>
+   <LangVersion>latest</LangVersion>
+ </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="LabelAutoFontSize.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Picture.Image.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="LabelAutoFontSize.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Picture.Image.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Font\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Include="CokeFont.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
+  </ItemGroup>  
+
+</Project>
